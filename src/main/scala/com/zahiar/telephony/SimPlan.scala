@@ -18,7 +18,15 @@ class SimPlan(name: String, minutes: Int, texts: Int, data: Int) {
 
     addOns += addOn
   }
-  def removeAddon(addOn: AddOn): Unit = addOns -= addOn
+
+  def removeAddon(addOn: AddOn) {
+    if (!addOns.contains(addOn)) {
+      throw new IllegalArgumentException("AddOn does not exist on Sim Plan")
+    }
+
+    addOns -= addOn
+  }
+
   def getAddons() = addOns
 
 }

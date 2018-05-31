@@ -43,4 +43,12 @@ class SimPlanTests extends FunSuite with BeforeAndAfter {
     assert(simPlan.getAddons().contains(addOn) === false)
   }
 
+  test("Throw exception if the AddOn being removed does not exist") {
+    val addOn = AddOn("You don't have me!")
+
+    assertThrows[IllegalArgumentException] {
+      simPlan.removeAddon(addOn)
+    }
+  }
+
 }
