@@ -25,4 +25,13 @@ class SimPlanTests extends FunSuite with BeforeAndAfter {
     assert(simPlan.getAddons().contains(addOn))
   }
 
+  test("Remove AddOn from sim plan") {
+    val addOn = AddOn("Free data in the world")
+    simPlan.addAddon(addOn)
+    assert(simPlan.getAddons().contains(addOn))
+
+    simPlan.removeAddon(addOn)
+    assert(simPlan.getAddons().contains(addOn) === false)
+  }
+
 }

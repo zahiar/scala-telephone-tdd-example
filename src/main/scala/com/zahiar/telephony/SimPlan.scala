@@ -12,6 +12,7 @@ class SimPlan(name: String, minutes: Int, texts: Int, data: Int) {
   def getData = data
 
   def addAddon(addOn: AddOn): Unit = addOns += addOn
+  def removeAddon(addOn: AddOn): Unit = addOns -= addOn
   def getAddons() = addOns
 
 }
